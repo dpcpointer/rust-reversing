@@ -69,51 +69,74 @@ uint64_t decryption::decrypt_base_networkable_list(uint64_t base_networkable) {
 }
 
 uint64_t decryption::decrypt_player_eyes(uint64_t player_eyes) {
-	signed __int64 *v3; // rbx
-  	int v5; // eax
-  	unsigned int v6; // eax
-  	bool v7; // zf
-  	signed __int64 v8; // rcx
-  	signed __int64 v23; // [rsp+20h] [rbp-28h] BYREF
+	signed __int64* a2;
+	__int64 a3;
+	signed __int64* v3; // rbx
+	int v5; // eax
+	unsigned int v6; // eax
+	bool v7; // zf
+	signed __int64 v8; // rcx
+	signed __int64 v23; // [rsp+20h] [rbp-28h] BYREF
 
-  	a2 = &v23;
-    v23 = m.read<uint64_t(a1 + 24);
-    LODWORD(a3) = 2;
-    do
-    {
-      v5 = *(_DWORD *)a2;
-      a2 = (signed __int64 *)((char *)a2 + 4);
-      v6 = (((v5 - 1900067576) << 8) | ((unsigned int)(v5 - 1900067576) >> 24)) ^ 0x23E2D133;
-      *((_DWORD *)a2 - 1) = (v6 << 21) | (v6 >> 11);
-      v7 = (_DWORD)a3 == 1;
-      a3 = (unsigned int)(a3 - 1);
-    }
-    while ( !v7 );
-    v8 = v23;
+	a2 = &v23;
+	v23 = m.read<uint64_t>(player_eyes + 24);
+	LODWORD(a3) = 2;
+	do
+	{
+		v5 = *(_DWORD*)a2;
+		a2 = (signed __int64*)((char*)a2 + 4);
+		v6 = (((v5 - 1900067576) << 8) | ((unsigned int)(v5 - 1900067576) >> 24)) ^ 0x23E2D133;
+		*((_DWORD*)a2 - 1) = (v6 << 21) | (v6 >> 11);
+		v7 = (_DWORD)a3 == 1;
+		a3 = (unsigned int)(a3 - 1);
+	} while (!v7);
+	v8 = v23;
 
 	return decryption::Il2cppGetHandle(v23);
 }
 
 uint64_t decryption::decrypt_player_inventory(uint64_t player_inventory) {
+	__int64 a2;
+	signed __int64* a3;
 	__int64 v3; // rbx
-    int v5; // r9d
-    unsigned int v6; // edx
-    signed __int64 v24; // [rsp+20h] [rbp-28h] BYREF
-
+	int v5; // r9d
+	unsigned int v6; // edx
+	unsigned int v7; // eax
+	signed __int64 v8; // rcx
+	signed __int64 v24; // [rsp+20h] [rbp-28h] BYREF
 	a3 = &v24;
-    v24 = m.read<uint64_t>(a1 + 24);
-    v5 = 2;
-    do
-    {
-      v6 = *(_DWORD *)a3;
-      v7 = *(_DWORD *)a3;
-      a3 = (signed __int64 *)((char *)a3 + 4);
-      a2 = (((v7 << 12) | (v6 >> 20)) - 2036272215) ^ 0xB392FC62;
-      *((_DWORD *)a3 - 1) = (2 * a2) | ((unsigned __int64)(unsigned int)a2 >> 31);
-      --v5;
-    }
-    while ( v5 );
-    v8 = v24;
+	v24 = m.read<uint64_t>(player_inventory + 24);
+	v5 = 2;
+	do
+	{
+		v6 = *(_DWORD*)a3;
+		v7 = *(_DWORD*)a3;
+		a3 = (signed __int64*)((char*)a3 + 4);
+		a2 = (((v7 << 12) | (v6 >> 20)) - 2036272215) ^ 0xB392FC62;
+		*((_DWORD*)a3 - 1) = (2 * a2) | ((unsigned __int64)(unsigned int)a2 >> 31);
+		--v5;
+	} while (v5);
+	v8 = v24;
 
-	return decryption::Il2cppGetHandle(24);
+	return decryption::Il2cppGetHandle(v24);
+}
+
+__int64 decryption::decrypt_player_held_item(long long* value) {
+	int* v1; // rax
+	int v2; // r8d
+	unsigned int v3; // edx
+	int v4; // ecx
+	long long v6; // [rsp+0h] [rbp-18h] BYREF
+
+	v1 = (int*)&v6;
+	v2 = 2;
+	v6 = *a1;
+	do
+	{
+		v3 = *v1;
+		v4 = *v1++;
+		*(v1 - 1) = ((((v4 << 25) | (v3 >> 7)) ^ 0x506DB171) + 878459239) ^ 0x87DEA084;
+		--v2;
+	} while (v2);
+	return v6;
 }
