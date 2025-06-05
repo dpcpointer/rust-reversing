@@ -62,7 +62,7 @@ namespace offsets {
 	}
 
 	namespace PlayerEyes {
-		offset playerRotation = 0x50; // Quan
+		offset bodyRotation = 0x50; // Quan
 	}
 
 	namespace PlayerInventory {
@@ -74,21 +74,20 @@ namespace offsets {
 		offset inventoryRadioactivity = 0x50; // float
 		offset loot = 0x48; // PlayerLoot
 	}
+
+	namespace Item {
+		constexpr uint64_t UID = 0xc8; // uint64_t %6574055d8d48554dbb5e2d9d4cc098f344307ccb %64b462a00d0ab00e6041c1d673010a7e9fdec97e;
+	}
 	
 	namespace ItemContainer {
-		enum Flag{
-		IsPlayer = 1,
-		Clothing = 2,
-		Belt = 4,
-		SingleType = 8,
-		IsLocked = 16,
-		ShowSlotsOnIcon = 32,
-		NoBrokenItems = 64,
-		NoItemInput = 128,
-		ContentsHidden = 256,
-		IsArmor = 512
-	};
 		offset itemList = 0x38; //  List<%c7d469fbb24ad5c85146bc620c0c73e36df50f27> or List<Item>
 		offset slotAmt = 0x60; // int	
+		offset blockedItems = 0x68; // HashSet<ItemDefinition>
+		offset temperature = 0x2C; // float
+		offset parent = 0x70; // Item
+		offset onlyAllowedItems = 0x58; // ItemDefintion[]
+		offset flags = 0x28; // ItemContainer.Flag
+		offset availableSlots = 0x50; // List<ItemSlot>
+		offset allowedContents = 0x30; // ItemContainer.ContentsType
 	}
 }

@@ -121,16 +121,16 @@ uint64_t decryption::decrypt_player_inventory(uint64_t player_inventory) {
 	return decryption::Il2cppGetHandle(v24);
 }
 
-__int64 decryption::decrypt_player_held_item(long long* value) {
+__int64 decryption::decrypt_player_held_item(long long a1) {
 	int* v1; // rax
 	int v2; // r8d
 	unsigned int v3; // edx
 	int v4; // ecx
 	long long v6; // [rsp+0h] [rbp-18h] BYREF
-
+	
 	v1 = (int*)&v6;
 	v2 = 2;
-	v6 = *a1;
+	v6 = (a1);
 	do
 	{
 		v3 = *v1;
