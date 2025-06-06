@@ -113,7 +113,7 @@ namespace offsets {
 	}
 
 	namespace PlayerInput {
-		offset hadInputBuffer = 0x30;				 // bool
+		 offset hadInputBuffer = 0x30;				 // bool
 		offset bodyRotation = 0x34;					 // Quaternion
 		offset bodyAngels = 0x44;					 // Vector3
 		offset bodyAnglesOverride = 0x50;			 // Vector3
