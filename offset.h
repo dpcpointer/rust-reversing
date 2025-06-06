@@ -191,28 +191,28 @@ namespace offsets {
 	};
 
 	namespace RecoilProperties {
-    	  offset recoilYawMin = 0x18;                  // float
-    	  offset recoilYawMax = 0x1C;                  // float
-    	  offset recoilPitchMin = 0x20;                // float
-    	  offset recoilPitchMax = 0x24;                // float
-    	  offset timeToTakeMin = 0x28;                 // float
-    	  offset timeToTakeMax = 0x2C;                 // float
-    	  offset ADSScale = 0x30;                      // float
-    	  offset movementPenalty = 0x34;               // float
-    	  offset clampPitch = 0x38;                    // float
-    	  offset pitchCurve = 0x40;                    // AnimationCurve
-    	  offset yawCurve = 0x48;                      // AnimationCurve
-    	  offset useCurves = 0x50;                     // bool
-    	  offset curvesAsScalar = 0x51;                // bool
-    	  offset shotsUntilMax = 0x54;                 // int
-    	  offset maxRecoilRadius = 0x58;               // float
-    	  offset overrideAimconeWithCurve = 0x5C;      // bool
-    	  offset aimconeCurveScale = 0x60;             // float
-    	  offset aimconeCurve = 0x68;                  // AnimationCurve
-    	  offset aimconeProbabilityCurve = 0x70;       // AnimationCurve
-    	  offset ammoAimconeScaleMultiProjectile = 0x78; // float
-    	  offset ammoAimconeScaleSingleProjectile = 0x7C; // float
-    	  offset newRecoilOverride = 0x80;              // RecoilProperties
+    	offset recoilYawMin = 0x18;                  // float
+    	offset recoilYawMax = 0x1C;                  // float
+    	offset recoilPitchMin = 0x20;                // float
+    	offset recoilPitchMax = 0x24;                // float
+    	offset timeToTakeMin = 0x28;                 // float
+    	offset timeToTakeMax = 0x2C;                 // float
+    	offset ADSScale = 0x30;                      // float
+    	offset movementPenalty = 0x34;               // float
+    	offset clampPitch = 0x38;                    // float
+    	offset pitchCurve = 0x40;                    // AnimationCurve
+    	offset yawCurve = 0x48;                      // AnimationCurve
+    	offset useCurves = 0x50;                     // bool
+    	offset curvesAsScalar = 0x51;                // bool
+    	offset shotsUntilMax = 0x54;                 // int
+    	offset maxRecoilRadius = 0x58;               // float
+    	offset overrideAimconeWithCurve = 0x5C;      // bool
+    	offset aimconeCurveScale = 0x60;             // float
+    	offset aimconeCurve = 0x68;                  // AnimationCurve
+    	offset aimconeProbabilityCurve = 0x70;       // AnimationCurve
+    	offset ammoAimconeScaleMultiProjectile = 0x78; // float
+    	offset ammoAimconeScaleSingleProjectile = 0x7C; // float
+    	offset newRecoilOverride = 0x80;              // RecoilProperties
 	}
 	
 	
