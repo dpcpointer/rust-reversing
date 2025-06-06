@@ -40,3 +40,16 @@ enum CameraMode {
 		DeathCamClassic,
 		Last = 3
 };
+
+enum LifeState {
+	Alive = 0,
+	Dead = 1
+};
+
+enum Faction {
+	Default,
+	Player,
+	Bandit,
+	Scientist,
+	Horror
+};

@@ -21,6 +21,10 @@ namespace offsets {
 		offset camera_chain_3 = 0x10;
 	}
 
+	namespace MainCamera {
+		offset matrix = 0x30C;
+	}
+
 	namespace BaseEntity {
 		offset _pendingFileRequests = 0x80;         // BaseEntity.PendingFileRequest
 		offset menuOptions = 0x88;                  // List<Option>
@@ -37,6 +41,27 @@ namespace offsets {
 		offset _name = 0x148;						// string
 		offset ragdoll = 0x158;						// Ragdoll
 	}
+
+	struct BaseCombatEntity_Pickup{ 
+		bool enabled; 
+		void* itemTarget; 							// ItemDefinition
+		int itemCount; 
+		bool setConditionFromHealth; 
+		float subtractCondition;
+		bool requireBuildingPrivilege; 
+		bool requireHammer; 
+		bool requireEmptyInv; 
+		float overridePickupTime; 
+	};
+
+	struct BaseCombatEntity_Repair {
+		bool enabled; 
+		void* itemTarget; 					         // ItemDefinition
+		void* ignoreForRepair;  			         // ItemDefinition
+		void* repairEffect; 				         // GameObjectRef
+		void* repairFullEffect; 			         // GameObjectRef
+		void* repairFailedEffect;			         // GameObjectRef
+	};
 
 	namespace BaseCombatEntity {
 		offset spawnDeployableCorpseOnDeath = 0x1B0; // bool
@@ -109,18 +134,50 @@ namespace offsets {
 	}
 
 	namespace PlayerEyes {
-	
+		offset thirdPersonSleepingOffset = 0x28;     // Vector3
+		offset defaultLazyAim = 0x38;				 // LazyAimProperties
+		offset viewOffset = 0x40;					 // encryptedValue<Vector3>
+		offset bodyRotation = 0x50;   			     // Quaternion
+		offset headAngles = 0x60;					 // Vector3
+		offset rotationLook = 0x6C; 				 // Quaternion
+		offset postRotationLook = 0x7C; 			 // Quaternion
+		offset postRotationLookAlpha = 0x8C; 		 // float
+		offset IsAltLookingLegsThreshold = 0x90; 	 // bool
 	}
 
-	namespace PlayerInventory {
 
+	struct PlayerInventory_WearCheckResult {
+		bool Result;
+		void* ChangedItem; 							 // List<Item>
+	};
+
+	namespace PlayerInventory {
+		offset returnItem = 0x38; 					  // List<Item> 
+		offset containsRadioactiveItems = 0x54; 	  // bool
+		offset crafting = 0x40; 					  // ItemCrafter
+		offset inventoryRadioactivity = 0x50; 		  // float
+		offset lastSet = 0x28; 						  // List<ItemIcon> 
+		offset loot = 0x48; 						  // PlayerLoot
+		offset cachedResult = 0x68; 				  // PlayerInventory.WearCheckResult
+		offset invMain = 0x58;						  // ItemContainer
+		offset invWear = 0x60;						  // ItemContainer
+		offset invBelt = 0x58;						  // ItemContainer
 	}
 
 	namespace Item {
-		
+		offset uid = 0xD8; 							  // ulong
 	}
 	
 	namespace ItemContainer {
-	
+		offset availableSlots = 0x50;                 // List<ItemSlot>
+		offset itemList = 0x18;						  // List<Item>
+		offset parent = 0x20;						  // parent
 	}
+
+	namespace Item {
+		offset ammount = 0xBC;						  // int
+		offset info = 0x88;							  // ItemDefinition
+		offset object = 0x10;						  // struct -> BaseEntity 
+	} 
+	
 }
