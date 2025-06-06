@@ -179,5 +179,89 @@ namespace offsets {
 		offset info = 0x88;							  // ItemDefinition
 		offset object = 0x10;						  // struct -> BaseEntity 
 	} 
+
+	struct BaseProjectile_Magazine {
+		int builtInSize;
+		int ammoTypes; 								  // AmmoTypes
+	  	int capacity;
+		int contents;
+		void* ammoType; 							   // ItemDefinition
+		bool allowPlayerReloading;
+		bool allowAmmoSwitching;
+	};
+
+	namespace RecoilProperties {
+    	offset recoilYawMin = 0x18;                  // float
+    	offset recoilYawMax = 0x1C;                  // float
+    	offset recoilPitchMin = 0x20;                // float
+    	offset recoilPitchMax = 0x24;                // float
+    	offset timeToTakeMin = 0x28;                 // float
+    	offset timeToTakeMax = 0x2C;                 // float
+    	offset ADSScale = 0x30;                      // float
+    	offset movementPenalty = 0x34;               // float
+    	offset clampPitch = 0x38;                    // float
+    	offset pitchCurve = 0x40;                    // AnimationCurve
+    	offset yawCurve = 0x48;                      // AnimationCurve
+    	offset useCurves = 0x50;                     // bool
+    	offset curvesAsScalar = 0x51;                // bool
+    	offset shotsUntilMax = 0x54;                 // int
+    	offset maxRecoilRadius = 0x58;               // float
+    	offset overrideAimconeWithCurve = 0x5C;      // bool
+    	offset aimconeCurveScale = 0x60;             // float
+    	offset aimconeCurve = 0x68;                  // AnimationCurve
+    	offset aimconeProbabilityCurve = 0x70;       // AnimationCurve
+    	offset ammoAimconeScaleMultiProjectile = 0x78; // float
+    	offset ammoAimconeScaleSingleProjectile = 0x7C; // float
+    	offset newRecoilOverride = 0x80;              // RecoilProperties
+	}
 	
+	
+	namespace BaseProjectile {
+		offset damageScale = 0x2CC;                   // float
+		offset distanceScale = 0x2D0;                 // float
+		offset projectileVelocityScale = 0x2D4;       // float
+		offset automatic = 0x2D8;                     // bool
+		offset reloadTime = 0x310;                    // float
+		offset primaryMagazine = 0x318;				  // BaseProjectile.Magazine
+		offset canUnloadAmmo = 0x314;                 // bool
+		offset aimSway = 0x334;                       // float
+		offset aimSwaySpeed = 0x338;                  // float
+		offset recoil = 0x340;                        // RecoilProperties
+		offset aimCone = 0x350;                       // float
+		offset hipAimCone = 0x354;                    // float
+		offset aimconePenaltyPerShot = 0x358;         // float
+		offset aimConePenaltyMax = 0x35C;             // float
+		offset aimconePenaltyRecoverTime = 0x360;     // float
+		offset aimconePenaltyRecoverDelay = 0x364;    // float
+		offset stancePenaltyScale = 0x368;            // float
+		offset hasAds = 0x36C;                        // bool
+		offset noAimingWhileCycling = 0x36D;          // bool
+		offset manualCycle = 0x36E;                   // bool
+		offset needsCycle = 0x36F;                    // bool
+		offset isCycling = 0x370;                     // bool
+		offset isBurstWeapon = 0x372;                 // bool
+		offset canChangeFireModes = 0x373;            // bool
+		offset internalBurstRecoilScale = 0x378;      // float
+		offset internalBurstFireRateScale = 0x37C;    // float
+		offset internalBurstAimConeScale = 0x380;     // float
+		offset resetDuration = 0x384;                 // float
+		offset numShotsFired = 0x388;                 // int
+		offset stancePenalty = 0x39C;                 // float
+		offset aimconePenalty = 0x3A0;                // float
+		offset cachedModHash = 0x3A4;                 // uint
+		offset sightAimConeScale = 0x3A8;             // float
+		offset sightAimConeOffset = 0x3AC;            // float
+		offset hipAimConeScale = 0x3B0;               // float
+		offset hipAimConeOffset = 0x3B4;              // float
+		offset isReloading = 0x3B8;                   // bool
+		offset swaySampleTime = 0x3BC;                // float
+		offset reloadPressTime = 0x3C8;               // float
+		offset clientReloadMagazineCount = 0x3D0;     // int
+		offset ClientLastAttackTime = 0x3D4;          // TimeSince
+		offset ammoTypePreReload = 0x3D8;             // ItemDefinition
+		offset fractionalReloadDesiredCount = 0x3E0;  // int
+		offset fractionalReloadNumAdded = 0x3E4;      // int
+		offset currentBurst = 0x3E8;                  // int
+		offset triggerReady = 0x3EC;                  // bool
+	}
 }
