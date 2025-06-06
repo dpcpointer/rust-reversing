@@ -26,27 +26,39 @@ namespace offsets {
 	}
 
 	namespace BaseCombatEntity {
-
+		offset spawnDeployableCorpseOnDeath = 0x1B0; // bool
+		offset deployableCorpsePrefab = 0x1B8;       // GameObjectRef
+		offset skeletonProperties = 0x1C0;           // SkeletonProperties
+		offset baseProtection = 0x1C8;               // ProtectionProperties
+		offset startHealth = 0x1D0;                  // float
+		offset pickup = 0x1D8;                       // BaseCombatEntity.Pickup
+		offset repair = 0x200;                       // BaseCombatEntity.Repair
+		offset showHealthInfo = 0x230;               // bool
+		offset lifestate = 0x234;                    // BaseCombatEntity.LifeState
+		offset sendsHitNotification = 0x238;		 // bool
+		offset sendsMeleeHitNotification = 0x239;	 // bool
+		offset markAttackerHostile = 0x23A;			 // bool
+		offset faction = 0x244;						 // BaseCombatEntity.Faction
 	}
 
 	namespace BasePlayer {
 		offset inventoryValue = 0x578;               // PlayerInventory
-		offset movement = 0x580;                     // BaseMovement
+		offset movement = 0x2B0;                     // BaseMovement
 		offset currentTeam = 0x430; 	             // ulong
 		offset weaponMoveSpeedScale = 0x630;         // float
 		offset playerFlags = 0x558;                  // BasePlayer.Flags
-		offset eyesValue = 0x568;                    // PlayerEyes
-		offset input = 0x4F8;                        // PlayerInput
-		offset cachedProtection = 0x5C0;             // ProtectionProperties
-		offset blueprints = 0x620;                   // PlayerBlueprints
-		offset metabolism = 0x2C8;                   // PlayerMetabolism
-		offset modifiers = 0x410;                    // PlayerModifiers
-		offset disabledHeldEntity = 0x478;           // HeldEntity
-		offset activeTelephone = 0x2A0;              // PhoneController
-		offset collision = 0x4D0;                    // BaseCollision
-		offset _lookingAt = 0x2D0;                   // GameObject
+		offset eyesValue = 0x250;                    // PlayerEyes
+		offset input = 0x340;                        // PlayerInput
+		offset cachedProtection = 0x570;             // ProtectionProperties
+		offset blueprints = 0x5C8;                   // PlayerBlueprints
+		offset metabolism = 0x3A0;                   // PlayerMetabolism
+		offset modifiers = 0x310;                    // PlayerModifiers
+		offset disabledHeldEntity = 0x588;           // HeldEntity
+		offset activeTelephone = 0x3E0;              // PhoneController
+		offset collision = 0x2A8;                    // BaseCollision
+		offset _lookingAt = 0x3C0;                   // GameObject
 		offset currentViewMode = 0x374;              // BasePlayer.CameraMode
-		offset _displayName = 0x598;                 // string
+		offset _displayName = 0x4F8;                 // string
 		offset petEntity = 0x4B8;                    // BaseEntity
 		offset gestureViewModel = 0x398;             // ViewModel
 		offset fallDamageEffect = 0x548;             // GameObjectRef
