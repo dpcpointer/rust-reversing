@@ -177,7 +177,7 @@ namespace offsets {
 	namespace Item {
 		offset ammount = 0xBC;						  // int
 		offset info = 0x88;							  // ItemDefinition
-		offset object = 0x10;						  // struct -> BaseEntity 
+		offset object = 0x40;						  // struct -> BaseEntity 
 	} 
 
 	struct BaseProjectile_Magazine {
