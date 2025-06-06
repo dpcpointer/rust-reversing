@@ -2,6 +2,52 @@
 
 // header file for classes this will contain errors.
 
+class Object {
+    private:
+    IntPtr m_CachedPtr; // 0x10
+public:
+	internal static int OffsetOfInstanceIDInCPlusPlusObject; // 0x0
+}
+
+class BaseNetworkable : BaseMonoBehaviour{
+private:
+    bool %4b972f5fc87e45ce6ee366a5e6803e934943cc73; // 0x20
+	int %ac42b1bdcb4662e494769b5764b39c6b895bbc09; // 0x24
+	string _prefabName; // 0x28
+public:
+	uint prefabID; // 0x30
+	bool globalBroadcast; // 0x34
+	bool globalBuildingBlock; // 0x35
+	readonly List<BaseEntity> children; // 0x38
+private:
+	bool %7e4c106a9a9e6ff7f5331df4b1f108691ddd46cd; // 0x40
+public:
+	%f96bc208e233d1bb2f269d759b950bc54dd2f877 net; // 0x48
+    private:
+	%f2c0a2b9a1fe7f93080228ab13a6f7244bdc8451 entityDestroy; // 0x50
+public:
+	List<Component> postNetworkUpdateComponents; // 0x58
+	%8d778223057eb870fa903a7dda20a2ada2ad9c64 %9ace7cefcc3e5047852ab89f3e6ac43944ad3084; // 0x60
+private:
+	string _prefabNameWithoutExtension; // 0x70
+public:
+	bool %c1c16b0b9ea10ce34d9391b1685dbe6a389d6a9d; // 0x78
+}
+
+class DeferredAction {
+private:
+	Action action; // 0x10
+public:
+	static encryptedValue<%fd67cb5245fc6ad8204adfe371ab7547b99a908f> %b23ac5be9adf5d9c7e4a2ca47d4645c378bcd613; // 0x0
+private:
+    Object sender; // 0x18
+public:
+	static %2d2ab65b1e601d413b8d3d33d91433c6dedf7f7f<%09f95bb0b0eb9a9ceefb66d4752f7c317a2a9b46<%e415c2039a975698207ac5eff5d621dc0c83f32a, BaseNetworkable>> %30dde9d1f6af4bbff850bca8d1801e277ef704a5; // 0x10
+private:	
+    bool <Idle>k__BackingField; // 0x20
+	ActionPriority priority; // 0x24
+};
+
 class BaseEntity : BaseNetworkable {
 private:
     List<BaseEntity.%f804c34f4e76acb38697667dc08fe91ac2358224> _pendingFileRequests; // 0x80
@@ -180,71 +226,71 @@ private:
 	bool %829f2c643ac8f6dca41b9b22d42c6e4eab31c724; // 0x4D8
 	%aa78c0e78c4df24389f9a8755a2b4c25e3a40dd1 %e1eecca409a11e27d06f72731c01575441eb8791; // 0x4DC
 	float %4136adbfed00ce7d52a0bdc82b565b33f052a1dd; // 0x4E0
-	
-    public PlayerVoiceSpeaker %f2a1f240be841312bba47d69844e5ca7d246517f; // 0x4E8
-	
-    private bool %446ea9ee2838ba3d4a17e2285444d2df1b933c90; // 0x4F0
-	private float %6d92e9253192e11208880b465c065695c2a3ab56; // 0x4F4
-	
-    protected string _displayName; // 0x4F8
-	
-    private bool %88301b708ae42e95e3adfeaff9c8334970b9b874; // 0x500
-	private int %f6a0445c3e38f94d926299e6b7e0215fcb700b1f; // 0x504
-	private %aa78c0e78c4df24389f9a8755a2b4c25e3a40dd1 %b68786576eff97af0b9ea9a1f8228f4ec85ed875; // 0x508
-	private float %edd1cc09d6c2ea6e86389901b39767eebfef62b6; // 0x50C
-	private float %3985e4a380f0cdb0f72bc146c419710e0b406f84; // 0x510
-	private encryptedValue<float> %44e04c881a9319dcca79fa967e555017ecfaf6a8; // 0x514
-	private %1e935c2103fc3cdfa9d5ad2ad5da3d3a4c442a88 %a34cfceaaa6aeb7e2c0300b3864a22bef13fd4bf; // 0x520
-	private Action<BasePlayer> %54af99c0050e6b94a7cbcdd93b79e00c91a07d22; // 0x528
-	private BasePlayer.TutorialItemAllowance %e28c2a3fef6393895ff3cf6bc201cb57da3e0d8d; // 0x530
-	private float %9233eb70260cc0f4449d2d5ca63d5727dbeae288; // 0x534
-	private float %b877b10fe189500e10adbc67f2992218359ae8d1; // 0x538
-	private float %e39e379af3a0fe0c4b569a27c28aa6f668b1445c; // 0x53C
-	private bool %32373e308909b4f5b1c4461c0b0ae604449638d0; // 0x540
-	
-    public GameObjectRef fallDamageEffect; // 0x548
-	public GameObjectRef drownEffect; // 0x550
-	public BasePlayer.PlayerFlags playerFlags; // 0x558
-	
-    private Collider %0394c42bed4a0487c3802626f2c19c20e0b6acec; // 0x560
-	
-    public %97725e00036e341228ccf19480dec0cee3186792 %26f4543c09678b6e96607bc5d4fc1763c35f8870; // 0x568
-	
-    private ProtectionProperties cachedProtection; // 0x570
-	private %2d2ab65b1e601d413b8d3d33d91433c6dedf7f7f<PlayerInventory> PlayerInventory; // 0x578
-	
-    public %47125bd2fda808d5f5a98d165bd0037ca3f606fa<ulong> %0603014f920e47388ce1060b2d0762e0a1af1bac; // 0x580
-	
-    private HeldEntity disabledHeldEntity; // 0x588
-	private Action %6ecf3fdcbd995f670edb564b868bbd13d601c581; // 0x590
-	private Stopwatch %23a24c4eb389a2a34236e27874dadebcb997f4bd; // 0x598
-	
-    public encryptedValue<ulong> %7509eee59a9e2a613ff718e0a1d4991b1e182f33; // 0x5A0
-	
-    private %c833a8a94e56a9061da61aecd0af64757de6dc99 %fc98d1f97d3df90876de56009d8f4043bb9ed24b; // 0x5B0
-	
-    public int %416c3d16ea017e451ea50fdbaab89902782d933e; // 0x5B8
-	public int %dd503cd9959fec46521848051ecac8625e8f2b54; // 0x5BC
-	
-    private Action<BasePlayer> %8c8f2ebc995cf17b412dd14a3a1fc375a540852f; // 0x5C0
-	
-    public PlayerBlueprints blueprints; // 0x5C8
-	
-    private BasePlayer.CapsuleColliderInfo %9d75fa82971428aeb9fedbc311735c55914740fa; // 0x5D0
-	private BasePlayer.CapsuleColliderInfo %7ec64086a95d3e69b7f1734625d40ad95f63d2af; // 0x5E4
-	private BasePlayer.CapsuleColliderInfo %40f3038a89958987220f154b1eab8cdae9d72392; // 0x5F8
-	private BasePlayer.CapsuleColliderInfo %bc6e438ed5a28863eda17d7bbaa681cacee6f5c2; // 0x60C
-	private Action<BasePlayer> %94f3f8d96021b79863a9421e3d395c80e5fdc85f; // 0x620
-	private float %34b82094f55c9bddcb8420d5918a8b223933088f; // 0x628
-	private float %4254376c8bcad178c6b1514c403b7f21428e2e98; // 0x62C
-	
-    public float weaponMoveSpeedScale; // 0x630
-	public bool clothingBlocksAiming; // 0x634
-	public float clothingMoveSpeedReduction; // 0x638
-	public float clothingWaterSpeedBonus; // 0x63C
-	public float clothingAccuracyBonus; // 0x640
-	public bool equippingBlocked; // 0x644
-	public float eggVision; // 0x648
-	public List<%91d55a94f495f4634cf7cf7bf26fb1550df630a4> %d0c77767273bcca3ef23a54188412df67843606b; // 0x650
-	public BaseEntity designingAIEntity; // 0x658
+public:
+    PlayerVoiceSpeaker %f2a1f240be841312bba47d69844e5ca7d246517f; // 0x4E8
+private:
+    bool %446ea9ee2838ba3d4a17e2285444d2df1b933c90; // 0x4F0
+    float %6d92e9253192e11208880b465c065695c2a3ab56; // 0x4F4
+protected:
+    string _displayName; // 0x4F8
+private:
+    bool %88301b708ae42e95e3adfeaff9c8334970b9b874; // 0x500
+	int %f6a0445c3e38f94d926299e6b7e0215fcb700b1f; // 0x504
+	%aa78c0e78c4df24389f9a8755a2b4c25e3a40dd1 %b68786576eff97af0b9ea9a1f8228f4ec85ed875; // 0x508
+	float %edd1cc09d6c2ea6e86389901b39767eebfef62b6; // 0x50C
+	float %3985e4a380f0cdb0f72bc146c419710e0b406f84; // 0x510
+	encryptedValue<float> %44e04c881a9319dcca79fa967e555017ecfaf6a8; // 0x514
+	%1e935c2103fc3cdfa9d5ad2ad5da3d3a4c442a88 %a34cfceaaa6aeb7e2c0300b3864a22bef13fd4bf; // 0x520
+	Action<BasePlayer> %54af99c0050e6b94a7cbcdd93b79e00c91a07d22; // 0x528
+	BasePlayer.TutorialItemAllowance %e28c2a3fef6393895ff3cf6bc201cb57da3e0d8d; // 0x530
+	float %9233eb70260cc0f4449d2d5ca63d5727dbeae288; // 0x534
+	float %b877b10fe189500e10adbc67f2992218359ae8d1; // 0x538
+	float %e39e379af3a0fe0c4b569a27c28aa6f668b1445c; // 0x53C
+	bool %32373e308909b4f5b1c4461c0b0ae604449638d0; // 0x540
+public:
+    GameObjectRef fallDamageEffect; // 0x548
+	GameObjectRef drownEffect; // 0x550
+	BasePlayer.PlayerFlags playerFlags; // 0x558
+private:	
+    Collider %0394c42bed4a0487c3802626f2c19c20e0b6acec; // 0x560
+public:
+    %97725e00036e341228ccf19480dec0cee3186792 %26f4543c09678b6e96607bc5d4fc1763c35f8870; // 0x568
+private:
+    ProtectionProperties cachedProtection; // 0x570
+	%2d2ab65b1e601d413b8d3d33d91433c6dedf7f7f<PlayerInventory> PlayerInventory; // 0x578
+public:
+    %47125bd2fda808d5f5a98d165bd0037ca3f606fa<ulong> %0603014f920e47388ce1060b2d0762e0a1af1bac; // 0x580
+private:
+    HeldEntity disabledHeldEntity; // 0x588
+	Action %6ecf3fdcbd995f670edb564b868bbd13d601c581; // 0x590
+	Stopwatch %23a24c4eb389a2a34236e27874dadebcb997f4bd; // 0x598
+public:
+    encryptedValue<ulong> %7509eee59a9e2a613ff718e0a1d4991b1e182f33; // 0x5A0
+private:
+    %c833a8a94e56a9061da61aecd0af64757de6dc99 %fc98d1f97d3df90876de56009d8f4043bb9ed24b; // 0x5B0
+public:
+    int %416c3d16ea017e451ea50fdbaab89902782d933e; // 0x5B8
+	int %dd503cd9959fec46521848051ecac8625e8f2b54; // 0x5BC
+private:
+    Action<BasePlayer> %8c8f2ebc995cf17b412dd14a3a1fc375a540852f; // 0x5C0
+public:
+    PlayerBlueprints blueprints; // 0x5C8
+private:
+    BasePlayer.CapsuleColliderInfo %9d75fa82971428aeb9fedbc311735c55914740fa; // 0x5D0
+	BasePlayer.CapsuleColliderInfo %7ec64086a95d3e69b7f1734625d40ad95f63d2af; // 0x5E4
+	BasePlayer.CapsuleColliderInfo %40f3038a89958987220f154b1eab8cdae9d72392; // 0x5F8
+	BasePlayer.CapsuleColliderInfo %bc6e438ed5a28863eda17d7bbaa681cacee6f5c2; // 0x60C
+	Action<BasePlayer> %94f3f8d96021b79863a9421e3d395c80e5fdc85f; // 0x620
+	float %34b82094f55c9bddcb8420d5918a8b223933088f; // 0x628
+	float %4254376c8bcad178c6b1514c403b7f21428e2e98; // 0x62C
+public:	
+    float weaponMoveSpeedScale; // 0x630
+    bool clothingBlocksAiming; // 0x634
+    float clothingMoveSpeedReduction; // 0x638
+    float clothingWaterSpeedBonus; // 0x63C
+    float clothingAccuracyBonus; // 0x640
+    bool equippingBlocked; // 0x644
+    float eggVision; // 0x648
+    List<%91d55a94f495f4634cf7cf7bf26fb1550df630a4> %d0c77767273bcca3ef23a54188412df67843606b; // 0x650
+    BaseEntity designingAIEntity; // 0x658
 };
