@@ -22,7 +22,20 @@ namespace offsets {
 	}
 
 	namespace BaseEntity {
-
+		offset _pendingFileRequests = 0x80;         // BaseEntity.PendingFileRequest
+		offset menuOptions = 0x88;                  // List<Option>
+		offset bounds = 0xA0;                       // Bounds
+		offset impactEffect = 0xB8;                 // GameObjectRef
+		offset enableSaving = 0xC0d;                // bool
+		offset syncPosition = 0xC1;                 // bool
+		offset model = 0xC8;                        // Model
+		offset flags = 0xD0;						// flags
+		offset itemSkin = 0xE0;						// ItemSkin
+		offset triggers = 0x120;					// List<TriggerBase>
+		offset _components = 0x130;					// List<EntityComponentBase>
+		offset addedToParentEntity = 0x140;			// BaseEntity
+		offset _name = 0x148;						// string
+		offset ragdoll = 0x158;						// Ragdoll
 	}
 
 	namespace BaseCombatEntity {
@@ -31,6 +44,8 @@ namespace offsets {
 		offset skeletonProperties = 0x1C0;           // SkeletonProperties
 		offset baseProtection = 0x1C8;               // ProtectionProperties
 		offset startHealth = 0x1D0;                  // float
+		offset _health = 0x23C;   					 // float
+		offset _maxHealth = 0x240;					 // float
 		offset pickup = 0x1D8;                       // BaseCombatEntity.Pickup
 		offset repair = 0x200;                       // BaseCombatEntity.Repair
 		offset showHealthInfo = 0x230;               // bool
@@ -69,7 +84,7 @@ namespace offsets {
 		offset clothingMoveSpeedReduction = 0x638;   // float
 		offset clothingBlocksAiming = 0x634;         // bool
 		offset clothingAccuracyBonus = 0x640;        // float
-		offset clActiveItem = 0x460;                 // ulong
+		offset clActiveItem = 0x460;                 // float
 	}
 
 	namespace PlayerInput {
