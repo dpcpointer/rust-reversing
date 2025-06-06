@@ -88,7 +88,24 @@ namespace offsets {
 	}
 
 	namespace PlayerInput {
-		
+		offset hadInputBuffer = 0x30;				 // bool
+		offset bodyRotation = 0x34;					 // Quaternion
+		offset bodyAngels = 0x44;					 // Vector3
+		offset bodyAnglesOverride = 0x50;			 // Vector3
+		offset bodyAnglesOverrideLerpSpeed = 0x60;   // float
+		offset headRotation = 0x64;					 // Quaternion
+		offset headAngles = 0x74;					 // Vector3
+		offset viewDelta = 0x90;					 // Vector2
+		offset headLerp = 0x98; 					 // float
+		offset mouseWheelUp = 0x98;					 // int
+		offset mouseWheelDn = 0xA0;					 // int
+		offset autorun = 0xA4;						 // <autorun>k__BackingField
+		offset toggleDuck = 0xA5;				     // <toggleDuck>k__BackingField
+		offset toggleAds = 0xA6;				     // bool
+		offset pendingMouseDelta = 0xB0;			 // Vector3
+		offset offsetAngles = 0xBC;					 // Vector3
+		offset ignoredButtons = 0xC8;				 // int
+		offset hasKeyFocus = 0xCC;					 // bool
 	}
 
 	namespace PlayerEyes {

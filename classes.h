@@ -294,3 +294,48 @@ public:
     List<%91d55a94f495f4634cf7cf7bf26fb1550df630a4> %d0c77767273bcca3ef23a54188412df67843606b; // 0x650
     BaseEntity designingAIEntity; // 0x658
 };
+
+class PlayerInput : EntityComponent<BasePlayer> {
+public:z
+	%d595559933fe59524fae3473734d0e15f266d0c0 state; // 0x28
+	bool hadInputBuffer; // 0x30
+private:
+	Quaternion bodyRotation; // 0x34
+	Vector3 bodyAngles; // 0x44
+	Vector3 bodyAnglesOverride; // 0x50
+	bool clearBodyAnglesOverrideOnLerpComplete; // 0x5C
+	float bodyAnglesOverrideLerpSpeed; // 0x60
+	Quaternion headRotation; // 0x64
+	Vector3 headAngles; // 0x74
+public:
+	encryptedValue<Vector3> recoilAngles - %ec0e10fd4936499e70815d0cfec84b1026c4d04c; // 0x80
+	Vector2 viewDelta; // 0x90
+private:
+	float headLerp; // 0x98
+	int mouseWheelUp; // 0x9C
+	int mouseWheelDn; // 0xA0
+	bool <autorun>k__BackingField; // 0xA4
+	bool <toggleDuck>k__BackingField; // 0xA5
+	bool toggleAds; // 0xA6
+	%e415c2039a975698207ac5eff5d621dc0c83f32a lastAdsEntity; // 0xA8
+	Vector3 pendingMouseDelta; // 0xB0
+public:
+	Vector3 offsetAngles; // 0xBC
+private:
+	int ignoredButtons; // 0xC8
+	bool hasKeyFocus; // 0xCC
+};
+
+class PlayerEyes : EntityComponent<BasePlayer> {
+public:
+	Vector3 thirdPersonSleepingOffset; // 0x28
+	LazyAimProperties defaultLazyAim; // 0x38
+private:
+	encryptedValue<Vector3> viewOffset; // 0x40
+	Quaternion bodyRotation; // 0x50
+	Vector3 headAngles; // 0x60
+	Quaternion rotationLook; // 0x6C
+	Quaternion postRotationLook; // 0x7C
+	float postRotationLookAlpha; // 0x8C
+	bool IsAltLookingLegsThreshold; // 0x90
+};
