@@ -5,19 +5,23 @@
 namespace offsets {
 	typedef const uint64_t offset;
 
-	namespace Globals {
-		offset base_networkable = 0xBEAA898;
-		offset il2cpp_handle_base = 0xC1A9DC0;
-		offset TOD_Sky_TypeInfo = 0xBF5AAD0;
-		offset MainCamera_TypeInfo = 0xBEB2470;
+	namespace globals {
+		offset base_networkable = 0xBDF9E28;
+		offset il2cpp_handle_base = 0xC0F6BA0;
+		offset TOD_Sky_TypeInfo = 0xBEAE110;
+		offset MainCamera_TypeInfo = 0xBDF7198;
 
 		offset networkable_chain_1 = 0xB8;
-		offset networkable_chain_2 = 0x20LL;
+		offset networkable_chain_2 = 0x28LL;
 		offset networkable_chain_3 = 0x10;
+		offset object_directory = 0x20;
+
+		offset camera_chain_1 = 0xB8;
+		offset camera_chain_2 = 0x28LL;
+		offset camera_chain_3 = 0x10;
 	}
 
 	namespace BaseEntity {
-
 
 	}
 
@@ -49,11 +53,11 @@ namespace offsets {
 		offset equippingBlocked = 0x644;             // bool
 		offset eggVision = 0x648;                    // float
 		offset drownEffect = 0x550;                  // GameObjectRef
-		offset collision = 0x4D0;                    // BaseCollision
 		offset clothingWaterSpeedBonus = 0x63C;      // float
 		offset clothingMoveSpeedReduction = 0x638;   // float
 		offset clothingBlocksAiming = 0x634;         // bool
 		offset clothingAccuracyBonus = 0x640;        // float
+		offset clActiveItem = 0x460;                 // ulong
 	}
 
 	namespace PlayerInput {
