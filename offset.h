@@ -159,13 +159,18 @@ namespace offsets {
 		offset lastSet = 0x28; 						  // List<ItemIcon> 
 		offset loot = 0x48; 						  // PlayerLoot
 		offset cachedResult = 0x68; 				  // PlayerInventory.WearCheckResult
-		offset invMain = 0x58;						  // ItemContainer
-		offset invWear = 0x60;						  // ItemContainer
-		offset invBelt = 0x58;						  // ItemContainer
+		offset invBelt = 0x60;						  // ItemContainer
 	}
 
+	namespace ItemDefinition {
+		offset displayName = 0x38; // phrase
+        offset shortname = 0x28; // string
+		offset displayDescription = 0x40; // phrase
+	}
+	
 	namespace Item {
 		offset uid = 0xD8; 							  // ulong
+		offset info = 0x88;							  // ItemDefinition
 	}
 	
 	namespace ItemContainer {
