@@ -8,7 +8,7 @@ namespace offsets {
 	namespace globals {
 		offset base_networkable = 0xBDF9E28;
 		offset il2cpp_handle_base = 0xC0F6BA0;
-		offset TOD_Sky_TypeInfo = 0xBEAE110;
+		offset TOD_Sky_TypeInfo = 0xBE85340;
 		offset MainCamera_TypeInfo = 0xBDF7198;
 
 		offset networkable_chain_1 = 0xB8;
